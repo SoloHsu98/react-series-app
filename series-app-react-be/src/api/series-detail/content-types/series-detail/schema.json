@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "series_details",
+  "info": {
+    "singularName": "series-detail",
+    "pluralName": "series-details",
+    "displayName": "Series Detail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "Year": {
+      "type": "string"
+    },
+    "Rating": {
+      "type": "decimal"
+    },
+    "totalEpisodes": {
+      "type": "integer"
+    },
+    "plotSummary": {
+      "type": "richtext"
+    },
+    "posterUrl": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "casts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::cast.cast",
+      "inversedBy": "series_details"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "trending",
+        "popular",
+        "ongoing",
+        "upcoming"
+      ]
+    },
+    "genre": {
+      "type": "enumeration",
+      "enum": [
+        "WuXia",
+        "XianXia"
+      ]
+    }
+  }
+}
